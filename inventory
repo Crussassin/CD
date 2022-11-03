@@ -1,2 +1,6 @@
-[all]
-server_1 ansible_ssh_host=192.168.56.140
+[testing_server]
+linux1 ansible_host=192.168.59.101 owner=slava
+
+
+[prod_server]
+linux2 ansible_host=192.168.59.102 owner=crussassin
