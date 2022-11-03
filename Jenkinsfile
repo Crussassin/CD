@@ -1,4 +1,3 @@
-
 pipeline {
     agent any 
     stages {
@@ -8,10 +7,7 @@ pipeline {
             }
         }
         stage('Execute playbook'){
-            steps{
-                sh 'ansible-galaxy install -r requirements.yml'
-                ansiblePlaybook credentialsId: '----------', disableHostKeyChecking: true, installation: 'myapp', inventory: 'inventory', playbook: 'playbook_13.yaml',vaultCredentialsId: '9c283514-5fac-4462-949b-1b19c0dda46e'
-            }
+
         }
         stage('Send HTTP request'){
             steps{
