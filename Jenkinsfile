@@ -7,11 +7,7 @@ pipeline {
             }
         }
         
-        stage('ssh-copy-id'){
-            steps{
-                sh 'ssh-copy-id localhost'
-            }
-        }
+
         
         
         stage('playbook'){
