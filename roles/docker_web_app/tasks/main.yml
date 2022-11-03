@@ -1,0 +1,28 @@
+---
+ - name: install Docker Engine
+   shell: yum -y install docker
+
+ - name: start Docker
+   systemd:
+     name: docker
+     state: started
+     enabled: yes
+
+ - name: Access DocekrHub private repo
+   docker_login:
+     username: crussassin
+     password: "{{ dockerhub_pass }}"
+
+ - name: Pull the image
+   shell: docker pull crussassin/point_12:app
+ 
+
+
+ - name: download docker image
+   shell: |
+    docker run -d -p 5001:5000 crussassin/point_12:app
+    docker run -d -p 5002:5000 crussassin/point_12:app
+    docker run -d -p 5003:5000 crussassin/point_12:app    
+   
+ - name: Remove old image
+   shell: docker image prune -f

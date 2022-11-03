@@ -1,0 +1,24 @@
+---
+- name: install Docker Engine
+  shell: yum -y install docker
+
+
+- name: Start Docker service
+  service:
+    name: docker
+    state: started
+    enabled: yes
+
+
+- name: generate nginx.conf
+  template: src=nginx.j2 dest=/root/nginx.conf mode=555
+- name: run Nginx container
+  docker_container:
+    name: balancer
+    image: nginx
+    recreate: yes
+    ports:
+      - 80:80
+    volumes:
+      - /root/nginx.conf:/etc/nginx/nginx.conf
+      

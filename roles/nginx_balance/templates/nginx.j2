@@ -1,0 +1,17 @@
+http {
+  upstream myapp {
+    server {{ansible_default_ipv4.address}}:5001;
+    server {{ansible_default_ipv4.address}}:5002;
+    server {{ansible_default_ipv4.address}}:5003;
+  }
+
+  server {
+    listen 80;
+
+    location / {
+      proxy_pass http://myapp;    
+}
+  }
+}
+
+events { }
