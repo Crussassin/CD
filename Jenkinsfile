@@ -9,7 +9,7 @@ pipeline {
         stage('playbook'){
             steps{
                 
-                ansiblePlaybook credentialsId: '8fee0108-b311-40bd-9bc4-6528ab2dbde1', disableHostKeyChecking: true, installation: 'myapp', inventory: 'inventory', playbook: 'playbook_13.yaml',vaultCredentialsId: '9c283514-5fac-4462-949b-1b19c0dda46e'
+                ansiblePlaybook credentialsId: 'github-ssh-key-git-crussassin', disableHostKeyChecking: true, installation: 'myapp', inventory: 'inventory', playbook: 'playbook_13.yaml',vaultCredentialsId: '9c283514-5fac-4462-949b-1b19c0dda46e'
             }
         }
 
