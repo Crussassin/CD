@@ -5,7 +5,15 @@ pipeline {
      
 
      }
-    agent any 
+     
+    agent any
+            
+    stage('Clean up'){
+            steps{
+                sh 'docker rmi $registry:app'
+            }
+        }
+    
     stages {
         stage('Clone Git repo'){
             steps{
