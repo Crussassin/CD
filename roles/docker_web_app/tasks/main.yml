@@ -3,15 +3,16 @@
    shell: yum -y install docker
 
  - name: start Docker
-   systemd:
+   service:
      name: docker
      state: started
      enabled: yes
 
  - name: Access DocekrHub private repo
    docker_login:
-     username: crussassin
-     password: {{ dockerhub_pass }}
+        username: crussassin
+        password: "{{ dockerhub_pass }}"
+
 
  - name: Pull the image
    shell: docker pull crussassin/point_12:app
