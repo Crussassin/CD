@@ -28,5 +28,3 @@
     docker run -d -p 5002:5000 crussassin/point_12:app
     docker run -d -p 5003:5000 crussassin/point_12:app    
    
- - name: Remove old image
-   shell: docker image prune -f
