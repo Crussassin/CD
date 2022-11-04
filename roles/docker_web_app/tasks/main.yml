@@ -8,10 +8,6 @@
      state: started
      enabled: yes
 
- - name: Access DocekrHub private repo
-   docker_login:
-        username: crussassin
-        password: "{{ dockerhub_pass }}"
 
 
  - name: Pull the image
