@@ -1,4 +1,10 @@
 pipeline {
+            environment {
+    registry = "crussassin/point_12"
+    registryCredential = '8fee0108-b311-40bd-9bc4-6528ab2dbde1'
+     
+
+     }
     agent any 
     stages {
         stage('Clone Git repo'){
