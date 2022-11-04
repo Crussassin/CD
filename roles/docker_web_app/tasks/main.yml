@@ -8,8 +8,8 @@
      state: started
      enabled: yes
 
-# - name: clean from containers
-#   shell: docker rm -f "$(docker ps -aq)"
+ - name: clean from containers
+   shell: docker rm -f "$(docker ps -aq)"
 
 
  - name: Pull the image
