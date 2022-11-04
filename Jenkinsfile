@@ -12,7 +12,7 @@ pipeline {
         
         stage('playbook'){
             steps{                
-                ansiblePlaybook credentialsId: 'ssh-key-for-servers', disableHostKeyChecking: true, installation: 'myapp', inventory: 'inventory', playbook: 'playbook_13.yaml',vaultCredentialsId: '9c283514-5fac-4462-949b-1b19c0dda46e'
+                ansiblePlaybook credentialsId: 'ssh-key-for-servers', disableHostKeyChecking: true, installation: 'myapp', inventory: 'inventory', playbook: 'playbook_13.yaml',vaultCredentialsId: 'pass'
             }
         }
 
