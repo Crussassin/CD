@@ -10,13 +10,7 @@ pipeline {
     stages {
     
     
-    
-    
-        stage('Clean up'){
-            steps{
-                sh 'docker rmi $registry:app'
-            }
-        }
+   
     
     
     
