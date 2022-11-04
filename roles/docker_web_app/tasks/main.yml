@@ -9,7 +9,7 @@
      enabled: yes
 
  - name: clean from containers
-   shell: docker ps -q -f status=exited | xargs --no-run-if-empty docker rm
+   shell: docker ps -q -f status=exited
 
 
  - name: Pull the image
