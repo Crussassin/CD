@@ -11,10 +11,10 @@
 # - name: clean from containers
 #   shell: docker rm -f "$(docker ps -aq)"
 
- - name: Access DocekrHub private repo
-   docker_login:
-     username: crussassin
-     password: "{{ dockerhub_pass }}"
+# - name: Access DocekrHub private repo
+#  docker_login:
+#     username: crussassin
+#     password: "{{ dockerhub_pass }}"
 
 
  - name: Pull the image
