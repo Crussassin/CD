@@ -20,6 +20,10 @@
  - name: Pull the image
    shell: docker pull crussassin/point_12:app
  
+ - name: Create a network
+   docker_network:
+     name: network_app 
+ 
  - name: Run web application 
    docker_container:
      name: "app{{ item }}"
