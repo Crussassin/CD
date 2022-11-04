@@ -20,11 +20,21 @@
  - name: Pull the image
    shell: docker pull crussassin/point_12:app
  
-
-
- - name: download docker image
-   shell: |
-    docker run -d -p 5001:5000 crussassin/point_12:app
-    docker run -d -p 5002:5000 crussassin/point_12:app
-    docker run -d -p 5003:5000 crussassin/point_12:app    
+ - name: Run web application 
+   docker_container:
+     name: "app{{ item }}"
+     image: crussassin/point_12:app
+   #  ports:
+    #   - "500{{ item }}:5000"
+     recreate: yes
+     hostname: "{{ item }}"
+     networks:
+       - name: network_app
+   with_sequence: count=3
+   
+# - name: download docker image
+#   shell: |
+#    docker run -d -p 5001:5000 crussassin/point_12:app
+#    docker run -d -p 5002:5000 crussassin/point_12:app
+#    docker run -d -p 5003:5000 crussassin/point_12:app    
    
