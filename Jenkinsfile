@@ -6,15 +6,20 @@ pipeline {
 
      }
      
-    agent any
-            
-    stage('Clean up'){
+    agent any    
+    stages {
+    
+    
+    
+    
+        stage('Clean up'){
             steps{
                 sh 'docker rmi $registry:app'
             }
         }
     
-    stages {
+    
+    
         stage('Clone Git repo'){
             steps{
                 git branch: 'main', credentialsId: 'github-ssh-key-git-crussassin', url: 'https://github.com/Crussassin/CD_test'
